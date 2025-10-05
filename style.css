@@ -1,0 +1,175 @@
+/* ---------- BASIC PAGE STYLING ---------- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #fff3e0);
+  color: #333;
+  transition: background 0.5s ease;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(90deg, #464b42, #060201);
+  color: rgb(241, 239, 239);
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeInDown 1s ease;
+}
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color:#fdfdfd;
+}
+
+.filters, .effects {
+  margin-top: 10px;
+}
+
+.filter-btn {
+  background: #444;
+  color: rgb(152, 160, 170);
+  border: none;
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #e8e2f0;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.effects select {
+  margin-left: 10px;
+  padding: 8px 12px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.effects select:hover {
+  border-color: #ff9800;
+}
+
+/* ---------- GALLERY GRID ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 30px;
+  animation: fadeInUp 1s ease;
+}
+
+/* ---------- IMAGE CARDS ---------- */
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- LIGHTBOX ---------- */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.4s ease;
+}
+
+#lightbox.hidden {
+  display: none;
+}
+
+#lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+#lightbox img:hover {
+  transform: scale(1.02);
+}
+
+#close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#close:hover {
+  color: #ffcc00;
+}
+
+/* ---------- NAV BUTTONS ---------- */
+.nav-buttons {
+  position: absolute;
+  bottom: 60px;
+}
+
+.nav-buttons button {
+  background: #ff9800;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background: #9c6b26;
+  transform: scale(1.1);
+}
+
+/* ---------- FILTER EFFECTS ---------- */
+.filter-grayscale img {
+  filter: grayscale(100%);
+}
+
+.filter-blur img {
+  filter: blur(2px);
+}
+
+.filter-bright img {
+  filter: brightness(1.5);
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
